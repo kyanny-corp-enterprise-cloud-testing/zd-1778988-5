@@ -1,15 +1,10 @@
-# Reusable Workflow Scenario
-#  Passing down environment as input variable to 
-#  Test for https://github.com/github/customer-feedback/issues/5627
-name: RWF Caller Passing environment as input
+name: Caller Workflow
 
 on:
   workflow_dispatch:
 
 jobs:
-  Caller:
+  caller:
     uses: kyanny-corp-enterprise-cloud-testing/zd-1778988-5/.github/workflows/callee.yaml@main
     with:
-      runson: ubuntu-latest
-      env: prod
-    secrets: inherit
+      environment_name: prod

@@ -1,24 +1,16 @@
-# Reusable Workflow Scenario
-#  Using environment secret passed down as input
-#  Test for https://github.com/github/customer-feedback/issues/5627
-name: RWF Reusable using environment secret passed as input
+name: Reusable Workflow
 
 on:
   workflow_call:
     inputs:
-      runson:
-        type: string
-      env:
+      environment_name:
         type: string
 
 jobs:
   printenv:
-    runs-on: ${{ inputs.runson }}
-    environment: ${{ inputs.env }}
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment_name }}
     steps:
-    - name: Print Environment input
-      run: echo ${{ inputs.env }}
-    - name: Print Environment secret
-      run: echo $key | rev
-      env: 
-        key: ${{ secrets.AZURE_KEY }}
+      - run: echo $PASSWORD | fold -s1
+        env:
+          PASSWORD: ${{secrets.PASSWORD}}
