@@ -8,7 +8,7 @@ on:
 
 jobs:
   Caller:
-    uses: ./.github/workflows/callee.yaml
+    uses: kyanny-corp-enterprise-cloud-testing/zd-1778988-5/.github/workflows/callee.yaml@main
     with:
       runson: ubuntu-latest
       env: prod
