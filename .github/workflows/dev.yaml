@@ -5,7 +5,7 @@ on:
 
 jobs:
   caller:
-    uses: ./.github/workflows/callee.yaml@main
+    uses: ./.github/workflows/callee.yaml
     with:
       environment_name: dev
     secrets: inherit
