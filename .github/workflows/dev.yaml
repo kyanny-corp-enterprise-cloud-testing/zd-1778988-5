@@ -1,0 +1,11 @@
+name: Caller Workflow (dev)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  caller:
+    uses: kyanny-corp-enterprise-cloud-testing/zd-1778988-5/.github/workflows/callee.yaml@main
+    with:
+      environment_name: dev
+    secrets: inherit
