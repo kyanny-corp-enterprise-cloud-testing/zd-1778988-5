@@ -5,7 +5,7 @@ on:
 
 jobs:
   caller:
-    uses: kyanny-corp-enterprise-cloud-testing/zd-1778988-5/.github/workflows/callee.yaml@main
+    uses: ./.github/workflows/callee.yaml@main
     with:
       environment_name: prod
     secrets: inherit
