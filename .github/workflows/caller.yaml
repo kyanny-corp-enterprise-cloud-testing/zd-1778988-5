@@ -8,7 +8,7 @@ on:
 
 jobs:
   Caller:
-    uses: ./.github/workflows/callee.yml
+    uses: ./.github/workflows/callee.yaml
     with:
       runson: ubuntu-latest
       env: prod
